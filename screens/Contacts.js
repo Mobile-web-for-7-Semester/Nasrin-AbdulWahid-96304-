@@ -6,7 +6,7 @@ import {
     FlatList,
     StyleSheet
 } from 'react-native'
-
+import { Feather } from '@expo/vector-icons';
 import colors from '../utils/colors'
 import ContactListItem from '../components/contactListItem'
 
@@ -26,15 +26,30 @@ const contacts = [
 // function base component
 export default function Contacts(){
   return(
-    <FlatList
-    data={contacts}
-    renderItem={({item}) => { 
-      return <ContactListItem name={item.name} phone={item.phone} />
-    }}
-    />
+    <View>
+      <FlatList
+      data={contacts}
+      renderItem={({item}) => { 
+        return <ContactListItem name={item.name} phone={item.phone} />
+      }}
+      />
+      <View style={styles.floatButton}>
+        <Text>
+          <Feather name="plus" size={28} color="white"/>
+        </Text>
+      </View>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
-
+  floatButton: {
+    backgroundColor:'orange',
+    padding: 20,
+    borderRadius: '50%',
+  // postion = absolute => نظر به کامپوننت کلی در نظر گرفته میشود
+    position: 'absolute',
+    bottom: 40,
+    right: 40
+  }
 })
