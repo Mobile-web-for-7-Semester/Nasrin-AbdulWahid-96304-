@@ -3,14 +3,13 @@ import React from 'react'
 import {
     View,
     Text,
-    TouchableOpacity,
     StyleSheet
 } from 'react-native'
 
 import colors from '../utils/colors'
 import Avatar from './Avatar';
 // function base component
-export default function ContactListItem({name, phone}){
+export default function ContactThumbnail({name, phone}){
    return(
        <View style={styles.thumnailContainer}>
            <Avatar name={name} size={90}/>
