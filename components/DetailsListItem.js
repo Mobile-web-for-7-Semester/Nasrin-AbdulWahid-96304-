@@ -31,14 +31,14 @@ const styles = StyleSheet.create({
     borderContainer: {
         paddingLeft: 24
     },
-    contentContainer: {
-        paddingLeft: 20
-    },
     container: {
         flexDirection: 'row',
         paddingVertical: 16,
         borderBottomWidth: 0.5,
         borderBottomColor: colors.secondary
+    },
+    contentContainer: {
+        paddingLeft: 20
     },
     title: {
         fontSize: 20,

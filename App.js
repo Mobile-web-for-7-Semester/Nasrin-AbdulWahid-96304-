@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import Contacts from './screens/Contacts'
+import Profile from './screens/Profile'
 export default function App() {
   return (
     <View style={styles.container}>
-      <Contacts/>
+      <Profile name="Nasrin" phone="0594820" email="nasrin@gmail.com"/>
     </View>
   );
 } 

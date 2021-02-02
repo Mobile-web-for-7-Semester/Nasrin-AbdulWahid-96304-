@@ -22,6 +22,7 @@ export default function Avatar({name, size}){
 const styles = StyleSheet.create({
     avatarContainer:{
         borderRadius: '50%',
+        borderWidth: 1,
         borderColor: colors.white,
         backgroundColor: colors.primary,
         justifyContent: 'center',
