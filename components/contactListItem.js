@@ -14,7 +14,7 @@ export default function ContactListItem({name, phone, onPress}){
     return(
         <TouchableOpacity onPress={onPress} style={styles.container}>
             <View style={styles.contactInfo}>
-                <Avatar name={name} size={40}/>
+                <Avatar name={name} size={50}/>
                 <Text style={styles.details}>
                     <Text style={styles.title}>{name}</Text><br/>
                     <Text style={styles.subTitle}>{phone}</Text>
@@ -26,16 +26,16 @@ export default function ContactListItem({name, phone, onPress}){
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1
+      flex: 1,
+      paddingLeft:24
     },
     contactInfo: {
     // want to the first names word and phone come in one line use flexDirection
         flexDirection: 'row',
         paddingVertical: 16,
         paddingHorizontal: 24,
-        backgroundColor: colors.secondary,
         borderBottomWidth: 0.5,
-        borderBottomColor: colors.white
+        borderBottomColor: colors.secondary
     },
     details: {
         marginLeft:20
