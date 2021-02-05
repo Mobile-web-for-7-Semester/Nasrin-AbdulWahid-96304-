@@ -17,10 +17,11 @@ export default function CreateContact(){
            <TextInput placeholder="Name" style={styles.input} />
            <TextInput placeholder="Email" keyboardType="email-address" style={styles.input} />
            <TextInput placeholder="Phone" keyboardType="numeric" style={styles.input}/>
-           <TouchableOpacity style={styles.botton}>
+           
+           <TouchableOpacity style={[styles.botton, {backgroundColor: colors.primary}]}>
                <Text style={styles.bottonTxt}>Save</Text>
            </TouchableOpacity>
-           <TouchableOpacity style={styles.botton}>
+           <TouchableOpacity style={[styles.botton, {backgroundColor: 'red'}]}>
                <Text style={styles.bottonTxt}>Cancel</Text>
            </TouchableOpacity>
        </View> 
@@ -32,7 +33,8 @@ const styles = StyleSheet.create({
        borderRadius:30,
        marginTop:60,
        paddingVertical: 20,
-       paddingHorizontal: 40
+       paddingHorizontal: 40,
+       backgroundColor: colors.white
    },
    input: {
        paddingBottom: 10,
@@ -42,12 +44,12 @@ const styles = StyleSheet.create({
    },
    botton: {
        padding: 20,
-       marginBottom: 10,
-       borderRadius: 5
+       marginTop: 20,
+       borderRadius: 5,
+       justifyContent: 'center',
+       alignItems: 'center'
    },
    bottonTxt: {
        color: colors.white
    }
 })
-
-// create a contact form to add new contact in createContact.js
