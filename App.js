@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import CreateContact from './screens/CreateContacts'
+import SearchScreen from './screens/SearchScreen'
 export default function App() {
   return (
     <View style={styles.container}>
-      <CreateContact/>
+      <SearchScreen />
     </View>
   );
 } 
