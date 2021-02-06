@@ -31,7 +31,7 @@ export default function Contacts({navigation}){
       <FlatList
       data={contacts}
       renderItem={({item}) => { 
-        return <ContactListItem name={item.name} phone={item.phone} />
+        return <ContactListItem name={item.name} phone={item.phone} onPress={()=> navigation.navigate('Profile',{item:item})}/>
       }}
       />
       <TouchableOpacity style={styles.floatButton} onPress={()=> navigation.navigate('CreateContact')}>
