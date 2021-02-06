@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native';
+import { MaterialIcons } from "@expo/vector-icons";
 import { NavigationContainer } from '@react-navigation/native'; // for navigate between screen
 import { createStackNavigator } from "@react-navigation/stack";
 // becuase we use createStackNavigator in many time, for that we make a const
@@ -14,10 +15,20 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Contact" component={Contact} />
+        <Stack.Screen name="Contact" component={Contact}
+        options={({navigation}) => ({
+          headerRight:()=>(
+            <TouchableOpacity style={{paddingRight:20}} onPress={()=> navigation.navigate('Search')} style={{paddingRight:20}}>
+              <Text>
+                <MaterialIcons name="search" size={24} color="black"/>
+              </Text>
+            </TouchableOpacity>
+          )
+        })}
+        />
         <Stack.Screen name="CreateContact" component={CreateContact} />
         <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="SearchScreen" component={SearchScreen} />
+        <Stack.Screen name="Search" component={SearchScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )
