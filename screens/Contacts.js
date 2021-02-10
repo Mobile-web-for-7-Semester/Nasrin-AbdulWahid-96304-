@@ -23,7 +23,7 @@ export default function Contacts({navigation}){
   // when contacts screen renderd select all data from contacts table and show that ==> for that use from useEffect hook 
   useEffect(()=>{
     db.transaction((tx)=>{
-      tx.executeSql('SELECT * FROM contacts',[],(tx,{rows})=>{
+      tx.executeSql('SELECT * FROM contact',[],(tx,{rows})=>{
         //all data that we select com in rows and we need to array from object
         var data=[];
         for(var i = 0; i<rows.length; i++) {
