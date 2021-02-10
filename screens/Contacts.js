@@ -36,12 +36,18 @@ export default function Contacts({navigation}){
     })
   })
 
+  const deleteContact = (id) => {
+    db.transaction(tx => {
+      tx.executeSql('delete from contact where id = ?', [id]);
+    })
+  }
+
   return(
     <View>
       { contacts.length > 0 ? <FlatList
       data={contacts}
       renderItem={({item}) => { 
-        return <ContactListItem name={item.name} phone={item.phone} onPress={()=> navigation.navigate('Profile',{item:item})}/>
+        return <ContactListItem name={item.name} phone={item.phone} onPress={()=> navigation.navigate('Profile',{item:item})} onDeleteContact={()=> deleteContact(item.id)}/>
       }}
       />: <View>
             <Text>There is no contact</Text>
