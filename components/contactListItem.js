@@ -20,7 +20,9 @@ export default function ContactListItem({name, phone, onPress, onDeleteContact})
                     <Text style={styles.title}>{name}</Text><br/>
                     <Text style={styles.subTitle}>{phone}</Text>
                 </View>
-                <MaterialCommunityIcons name="trash-can" color="red" size={24} onPress={onDeleteContact}/>
+                <View style={styles.deleteIcon}>
+                    <MaterialCommunityIcons name="trash-can" color="red" size={24} onPress={onDeleteContact}/>
+                </View>
             </View>
         </TouchableOpacity>
     )
@@ -28,10 +30,10 @@ export default function ContactListItem({name, phone, onPress, onDeleteContact})
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
       paddingLeft:24
     },
     contactInfo: {
+        flex: 1,
     // want to the first names word and phone come in one line use flexDirection
         flexDirection: 'row',
         paddingVertical: 16,
@@ -40,6 +42,7 @@ const styles = StyleSheet.create({
         borderBottomColor: colors.secondary
     },
     details: {
+        flex: 2,
         marginLeft:20
     },
     title: {
@@ -49,5 +52,9 @@ const styles = StyleSheet.create({
     },
     subTitle: {
         color: colors.primary
+    },
+    deleteIcon: {
+        flex: 1,
+        marginLeft:100 
     }
 })

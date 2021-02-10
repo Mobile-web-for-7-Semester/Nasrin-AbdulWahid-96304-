@@ -10,11 +10,11 @@ import colors from '../utils/colors'
 // function base component
 export default function Avatar({name, size}){
     // name is the beging of each contact in Avatar
-    // const initial = name[0].toUpperCase();
+     const initial = name[0].toUpperCase();
     return (
 // if you want to apply many style in one component, you shoule add component in one array
         <View style={[styles.avatarContainer, {height:size, width:size}]}>
-            <Text style={styles.avatarTxt}>{ name }</Text>
+            <Text style={styles.avatarTxt}>{ initial }</Text>
         </View>
     )
 }
