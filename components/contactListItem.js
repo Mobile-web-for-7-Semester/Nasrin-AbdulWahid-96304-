@@ -5,20 +5,22 @@ import {
     Text,
     TouchableOpacity,
     StyleSheet
-} from 'react-native'
+} from 'react-native';
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from '../utils/colors'
 import Avatar from './Avatar';
 // function base component
-export default function ContactListItem({name, phone, onPress}){
+export default function ContactListItem({name, phone, onPress, onDeleteContact}){
     return(
         <TouchableOpacity onPress={onPress} style={styles.container}>
             <View style={styles.contactInfo}>
                 <Avatar name={name} size={50}/>
-                <Text style={styles.details}>
+                <View style={styles.details}>
                     <Text style={styles.title}>{name}</Text><br/>
                     <Text style={styles.subTitle}>{phone}</Text>
-                </Text>
+                </View>
+                <MaterialCommunityIcons name="trash-can" color="red" size={24} onPress={onDeleteContact}/>
             </View>
         </TouchableOpacity>
     )
