@@ -21,16 +21,16 @@ export default function CreateContact({navigation}){
 
     const addContact=(name, phone, email) => {
         db.transaction(tx => {
-            tx.executeSql('INSERT INTO contact(name, phone, email) VALUES(?, ?, ?);',[name, phone, email],() =>navigation.navigate('Contacts'));
+            tx.executeSql('insert into contact(name, phone, email) values(?, ?, ?);',[name, phone, email],() =>navigation.navigate('Contacts'));
         })
     }
 
     return(
        <View style={styles.formContainer}>
            {/* onChangeText==> when text change, the state also change */}
-           <TextInput placeholder="Name" style={styles.input} value={name} onChangeText={()=> setName(name)} />
-           <TextInput placeholder="Email" keyboardType="email-address" style={styles.input} value={email} onChangeText={()=> setEmail(email)} />
-           <TextInput placeholder="Phone" keyboardType="numeric" style={styles.input} value={phone} onChangeText={()=> setPhone(phone)}/>
+           <TextInput placeholder="Name" style={styles.input} value={name} onChangeText={(name)=> setName(name)} />
+           <TextInput placeholder="Email" keyboardType="email-address" style={styles.input} value={email} onChangeText={(email)=> setEmail(email)} />
+           <TextInput placeholder="Phone" keyboardType="numeric" style={styles.input} value={phone} onChangeText={(phone)=> setPhone(phone)}/>
            
            <TouchableOpacity style={[styles.botton, {backgroundColor: colors.primary}]}>
                <Text style={styles.bottonTxt} onPress={()=>addContact(name, phone, email)}>Save</Text>

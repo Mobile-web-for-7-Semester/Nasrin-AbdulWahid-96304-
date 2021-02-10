@@ -24,7 +24,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Contact" component={Contact}
+        <Stack.Screen name="Contacts" component={Contact}
         options={({navigation}) => ({
           headerRight:()=>(
             <TouchableOpacity style={{paddingRight:20}} onPress={()=> navigation.navigate('Search')} style={{paddingRight:20}}>
