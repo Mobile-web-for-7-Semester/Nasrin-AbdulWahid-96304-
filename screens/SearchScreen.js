@@ -45,6 +45,9 @@ export default function SearchScreen(){
         })
 
         setFilteredContacts(newContacts);
+        if(text.length < 1) {
+            setFilteredContacts([])
+        }
     }
 
     return(
